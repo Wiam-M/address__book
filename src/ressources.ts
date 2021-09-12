@@ -16,7 +16,7 @@ export class Ressources {
 
     //Contact-List
     
-    backgroundImageUrl : String = "/assets/images/contact.jpg"
+    backgroundImageUrl : String = "http://mruanova.com/img/1.jpg"
     header : String = 'CFM'
     title : String = 'Gestion de la liste des contacts'
     birthDate : String = "Date de naissance :"
