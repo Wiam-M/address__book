@@ -8,7 +8,7 @@ import { Contact } from '../model/contact';
 export class ContactDataBaseService implements InMemoryDbService {
   createDb(): Record<string, Contact[]> {
     const contacts: Contact[]= [
-      { id: 1, firstName: 'Wiam',lastName : 'Malek',birthDate: "02-06-1995", phone : '06622569470' , address : { workHomeAddress:'Travail',streetNumber: 46, street:'Quai de Loire', city:'Paris', postalCode: 75019, country:'France', remark:"This is a contact card test"}},
+      { id: 1, firstName: 'Wiam',lastName : 'Malek',birthDate: "02-06-1995", phone : '06622569471' , address : { workHomeAddress:'Travail',streetNumber: 46, street:'Quai de Loire', city:'Paris', postalCode: 75019, country:'France', remark:"This is a contact card test"}},
     ];
     return {contacts};
   }
