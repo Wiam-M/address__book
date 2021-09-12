@@ -1,0 +1,96 @@
+<section>
+    <article class="title-container">
+        <h2 class="contact-title"> {{contactTitle}} </h2>
+    </article>
+</section>
+<form [formGroup] = "contactForm" (ngSubmit)="onSubmit()">
+    <div class="input-field">
+        <label for="fName" ></label>
+        <div class="input-name">
+            <div class="input-validation"> 
+            <input type="text"  formControlName ="firstName" id="fName" placeholder= {{placeholderFirstName}} >
+            <mat-error *ngIf="firstName.invalid && firstName.touched">
+                <small  *ngIf="firstName.errors?.required"> {{firstNameRequiredValidation}} </small>
+                <small  *ngIf="firstName.errors?.minlength"> {{firstNameMinlengthValidation}} </small>
+            </mat-error>
+            </div>
+            <div class="input-validation"> 
+            <input type="text" formControlName ="lastName" id="lName" placeholder= {{placeholderLastName}} required>
+            <mat-error *ngIf="lastName.invalid && lastName.touched">
+                <small  *ngIf="lastName.errors?.required">  {{lastNameRequiredValidation}} </small>
+            </mat-error>
+            </div>
+        </div>
+    </div>
+    <div class="input-field">
+        <label for="birthDate"></label>
+        <div class="input-name">
+            <input type="date" formControlName="birthDate" id="birthDate" placeholder= {{placeholderBirthDate}} >
+        </div>
+    </div>
+    <div class="input-field">
+        <label for="phone" class="label-field"></label>
+        <div class="input-validation">
+            <input type="text" formControlName="phone" id="phone" placeholder= {{phonePlaceholder}} required>
+            <mat-error *ngIf="phone.invalid && phone.touched">
+                <small  *ngIf="phone.errors?.required"> {{phoneRequiredValidation}} </small>
+                <small  *ngIf="phone.errors?.pattern"> {{phonePatternValidation}} </small>
+            </mat-error>
+        </div>
+    </div>
+    <div formGroupName="address" class="input-field">
+        <div class="input-radio-button">
+            <label for="radioButton" class="label-field">
+                {{addressLabel}} 
+            </label>
+            <div class="input-radio-field">
+                <input type="radio" id="home-adress" formControlName="workHomeAddress" value= {{addressHomeValue}}>
+                <label for="home-adress"> {{addressHomeValue}} </label>
+            </div>
+            <div class="input-radio-field">
+                <input type="radio" id="work-adress" formControlName= "workHomeAddress" value= {{addressWorkValue}}>
+                <label for="work-adress"> {{addressWorkValue}} </label>
+            </div>
+        </div>
+        <div class="form-group input-field">
+            <label for="streetnumber"></label>
+            <div class="input-name">
+                <input type="number" formControlName="streetNumber" id="streetnumber" class="form-control" placeholder= {{streetNumberPlaceholder}}>
+            </div>
+        </div>
+        <div class="form-group input-field">
+            <label for="street"></label>
+            <div class="input-name">
+                <input type="text" formControlName="street" id="street" class="form-control" placeholder= {{streetPlaceholder}}>
+            </div>
+        </div>
+        <div class="form-group input-field">
+            <label for="city"></label>
+            <div class="input-name">
+                <input type="text" formControlName="city" id="city" class="form-control" placeholder= {{cityPlaceholder}}>
+            </div>
+        </div>
+        <div class="form-group input-field">
+            <label for="postalCode"></label>
+            <div class="input-name">
+            <input type="text" formControlName="postalCode" id="postalCode" class="form-control" placeholder= {{postalCodePlacholder}}>
+            </div>
+        </div>
+        <div class="form-group input-field">
+            <label for="country"></label>
+            <div class="input-name">
+                <input type="text" formControlName="country" id="country" class="form-control" placeholder= {{countryPlaceholder}}>
+            </div>
+        </div>
+        <div class="form-group input-field">
+            <label for="remark"></label>
+            <div class="input-name">
+                <input type="text" formControlName="remark" id="remark" class="form-control" placeholder= {{remarkPlaceholder}}>
+            </div>
+        </div>
+    </div>
+    <div class="button-container">
+        <button mat-raised-button type="submit"  color="primary"   [disabled]= "!editmode && !contactForm.valid"  >{{saveButton}}</button>
+    </div>
+        <!-- {{contactForm.value | json}} -->
+</form>

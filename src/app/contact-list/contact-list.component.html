@@ -1,0 +1,29 @@
+<div class="header-container">
+    <h1 [style.text-align]="textAlign">{{header}}</h1>
+    <h2 [style.text-align]="textAlign">{{title}}</h2>
+</div>
+<div class="content" >
+    <div fxLayout="row wrap"  fxLayoutGap="16px grid" fxLayoutAlign="start start">
+        <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%"  *ngFor="let contact of contacts" >
+            <mat-card class="mat-elevation-z4" >
+                <img mat-card-image src = {{backgroundImageUrl}}>
+                <mat-card-header>
+                    <mat-card-title>{{contact.firstName}} {{contact.lastName | uppercase}}</mat-card-title>
+                </mat-card-header>
+                <mat-card-content>
+                    <p> {{birthDate}} {{contact.birthDate}}</p>
+                    <p> {{phone}} {{contact.phone}}</p>
+                    <p> {{adressType}} {{contact.address.workHomeAddress}}</p>
+                    <p> {{adress}}  {{contact.address.streetNumber}} {{contact.address.street}} </p>
+                    <p> {{addressCity}} {{contact.address.postalCode}} {{contact.address.city}} </p>
+                    <p> {{addressCountry}} {{contact.address.country}}</p>
+                    <p> {{remark}}  {{contact.address.remark}}</p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" [routerLink]="['/contacts', contact.id]"> {{modifyButton}} </button>
+                    <button mat-raised-button color="warn" (click)="delete(contact)"> {{deletButton}}</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>   
+    </div>
+</div>

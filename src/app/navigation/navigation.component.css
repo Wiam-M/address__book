@@ -1,0 +1,26 @@
+.navbar{
+    justify-content: space-between;
+}
+.logoCfm{
+    font-size: 1.8rem;
+    padding-left: 15px;
+    color: white;
+    text-decoration: none;
+}
+/* .nav-bar-container{
+    height: 100vh;
+} */
+mat-icon{
+    color: white;
+}
+a{ 
+    font-size: 18px;
+}
+.input-radio-button{
+    display: flex;
+    justify-content:flex-start;
+}
+label {
+    margin-left: .6rem;
+    font-weight: 200;
+}

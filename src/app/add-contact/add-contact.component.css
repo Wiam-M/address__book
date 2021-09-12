@@ -1,0 +1,106 @@
+.title-container{
+    display: flex;
+    justify-content:center;
+    margin : 25px;
+}
+.contact-title{
+    color: #3f51b5;
+    font-size: 33px;
+    font-weight: 600;
+    font-style: normal;
+    line-height: 1.5em;
+    letter-spacing: 2.5px;
+    width: 50%;    
+    text-align: center;   
+}
+form{ 
+    padding: 16px;
+}
+input{
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    color: #666;
+    padding: .75em;
+    height: auto;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #eaeaea;
+    border-radius: 2px;
+    background: #fafafa;
+    box-shadow: none;
+    box-sizing: border-box;
+    transition: all .2s linear;
+}
+small{
+    font-size: 15px;
+}
+.textarea-field{
+    width : 100%;
+    margin-bottom: 1.25em;
+    display: block;
+}
+.input-field{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5em;
+}
+.input-name{
+    display: flex;
+    justify-content:flex-start;
+    width : 90%;
+    height: 60px;
+}
+.input-validation{
+    width : 90%;
+    height: auto;
+}
+button{
+    border-style: solid;
+    border-color: #3f51b5;
+}
+textarea{
+    width: 90%;
+    height: 120px;
+    background: #fafafa;
+    border-color: #eaeaea;
+    font-size: 1rem;
+    color: #666;
+    padding: .75em;
+}
+#lName{
+    margin-left : 1%;
+}
+.input-radio-field{
+    display: flex;
+    flex-direction: row;
+    width:15%
+}
+.input-radio-button{
+    font-size: 1.2rem;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.label-field{
+    margin-bottom: 20px;
+    font-size: 1.5 rem;
+    color : black
+}
+@media screen and (max-width: 1025px) {
+    .contact-title{
+        width: 100%;
+    }
+    .input-radio-button{
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items:center;
+    }
+    .input-radio-field{
+        display: block;
+        width: 50%;
+        padding: 5px;
+    }
+}
